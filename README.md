@@ -1,3 +1,3 @@
 # app.ios.sdk.mysabay.com.public
 
-SDK, sample app and public document for MySabay SDK
+SDK, sample app and document on how to integrate MySabay SDK for iOS

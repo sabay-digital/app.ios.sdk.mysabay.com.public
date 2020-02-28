@@ -13,8 +13,12 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => "MYSABAY PLATFORM LICENSE", :file => "LICENSE" }
   
   spec.author             = { "Lay Channara" => "lay.channara@sabay.com" }
+
+  spec.ios.deployment_target = '11.0'
+
+  spec.ios.vendored_frameworks = 'MySabaySdk.framework'
   
-  spec.source       = { :git => "https://git.sabay.com/mysabay/sdk/app.ios.sdk.mysabay.com.public.git", :tag => "#{spec.version}" }
+  spec.source       = { :http => "https://git.sabay.com/mysabay/sdk/app.ios.sdk.mysabay.com.public/raw/master/MySabaySdk.framework.zip" }
   
   spec.exclude_files = "Classes/Exclude"
 

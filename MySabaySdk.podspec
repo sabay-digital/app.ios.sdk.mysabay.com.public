@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   
   spec.homepage     = "https://kh.mysabay.com"
   
-  spec.license      = { :type => "MYSABAY PLATFORM LICENSE", :file => "LICENSE" }
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
   
   spec.author             = { "Lay Channara" => "lay.channara@sabay.com" }
 

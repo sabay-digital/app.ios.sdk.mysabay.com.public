@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   
   spec.homepage     = "https://kh.mysabay.com"
   
-  spec.license      = { :type => "MIT", :file => "LICENSE.md" }
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
   
   spec.author             = { "Lay Channara" => "lay.channara@sabay.com" }
 
@@ -21,5 +21,7 @@ Pod::Spec.new do |spec|
   spec.source       = { :http => "https://git.sabay.com/mysabay/sdk/app.ios.sdk.mysabay.com.public/raw/framework/MySabaySdk.framework.zip" }
   
   spec.exclude_files = "Classes/Exclude"
+
+  spec.preserve_paths = 'MySabaySdk.framework'
 
 end

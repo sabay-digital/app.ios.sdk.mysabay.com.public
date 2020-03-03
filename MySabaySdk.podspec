@@ -22,6 +22,4 @@ Pod::Spec.new do |spec|
   
   spec.exclude_files = "Classes/Exclude"
 
-  spec.preserve_paths = 'MySabaySdk.framework'
-
 end

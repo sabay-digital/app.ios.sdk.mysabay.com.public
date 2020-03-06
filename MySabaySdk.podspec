@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "MySabaySdk"
   
-  spec.version      = "0.0.5"
+  spec.version      = "0.0.6"
   
   spec.summary      = "Official MySabay SDK in Swift."
   
@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
 
   spec.ios.vendored_frameworks = 'MySabaySdk/MySabaySdk.framework'
   
-  spec.source       = { :http => "https://git.sabay.com/mysabay/sdk/app.ios.sdk.mysabay.com.public/raw/0.0.5/MySabaySdk.zip" }
+  spec.source       = { :http => "https://git.sabay.com/mysabay/sdk/app.ios.sdk.mysabay.com.public/raw/0.0.6/MySabaySdk.zip" }
   
   spec.exclude_files = "Classes/Exclude"
 

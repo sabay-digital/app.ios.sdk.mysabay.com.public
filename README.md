@@ -1,6 +1,6 @@
 # Official MySabay SDK for iOS
 
-This is the official MySabay SDK for native iOS application. To use this SDK, you can follow the guides below:
+This is the official MySabay SDK for native iOS application. To use this SDK, you can follow the guides below or download the test with the example project we have in this repository.
 
 ## Create your application
 
@@ -9,7 +9,7 @@ and `appSecret` for the integration.
 
 ## Installing
 
-The SDK is published on Cocoapods, so you can simply install into your project with pod or you can also download and manually install at [MySabay SDK](/MySabaySDK.zip)
+The SDK is published on Cocoapods, so you can simply install into your project with pod or you can also download and manually install at [MySabay SDK](https://github.com/sabay-digital/app.ios.sdk.mysabay.com.public/raw/master/MySabaySdk.zip)
 
 ```bash
 pod 'MySabaySdk'

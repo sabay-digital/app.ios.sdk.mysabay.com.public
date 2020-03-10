@@ -47,7 +47,7 @@ Next, it is time to config your Xcode project to update Info.plist, AppDelegate 
 </array>
 ```
 
-> !!! Replace `{appId}` `{appName}` and `{appSecret}` with your `appId`, `appName` and `appSecret`. 
+> !!! Replace `{appId}`, `{appName}` and `{appSecret}` with your `appId`, `appName` and `appSecret`. 
 
 
 **AppDelegate.swift**
@@ -79,10 +79,12 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
 
 ## Integration
 
-Note that in order to use the store and checkout function, the user must login first. 
-Follow the guide below for each functions provided by the SDK:
+> Note that in order to use the store and checkout function, the user must login first. 
+> Follow the guide below for each functions provided by the SDK:
 
-**Login**
+
+
+*  **Login**
 
 ```swift
 import MySabaySdk
@@ -100,7 +102,8 @@ MSMySabayManager.shared.logIn(fromController: self) { result in
 }
 ```
 
-**Store and checkout**
+
+*  **Store and checkout**
 
 ```swift
 import MySabaySdk
@@ -122,7 +125,9 @@ MSMySabayManager.shared.openStore(fromController: self) { result in
 }
 ```
 
-**Get profile**
+
+
+*  **Get profile**
 
 ```swift
 import MySabaySdk
@@ -139,7 +144,9 @@ MSMySabayManager.shared.getUserProfile { result in
 }
 ```
 
-**Refresh token**
+
+
+*  **Refresh token**
 
 ```swift
 import MySabaySdk
@@ -156,7 +163,9 @@ MSMySabayManager.shared.refreshToken { result in
 }
 ```
 
-**Get current token**
+
+
+*  **Get current token**
 
 ```swift
 if let token = MSToken.currentToken {
@@ -164,7 +173,9 @@ if let token = MSToken.currentToken {
 }
 ```
 
-**Check valid token**
+
+
+*  **Check valid token**
 
 ```swift
 if MSToken.isValid {
@@ -172,7 +183,8 @@ if MSToken.isValid {
 }
 ```
 
-**Logout**
+
+*  **Logout**
 
 ```swift
 MSMySabayManager.shared.logOut()

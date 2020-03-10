@@ -1,1 +1,4 @@
 .DS_Store
+Example/Pods
+Example/Podfile.lock
+Example/.DS_Store

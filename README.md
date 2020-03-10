@@ -27,15 +27,15 @@ Replace `{appId}` `{appName}` and `{appSecret}` with your `appId`, `appName` and
 ```xml
 <key>CFBundleURLTypes</key>
 <array>
-	<dict>
-		<key>CFBundleTypeRole</key>
-		<string>Viewer</string>
-		<key>CFBundleURLName</key>
-		<string>aog</string>
-		<key>CFBundleURLSchemes</key>
-		<array>
-			<string>mysabay{appId}</string>
-		</array>
+    <dict>
+        <key>CFBundleTypeRole</key>
+	    <string>Viewer</string>
+	    <key>CFBundleURLName</key>
+	    <string>aog</string>
+	    <key>CFBundleURLSchemes</key>
+	    <array>
+	        <string>mysabay{appId}</string>
+	    </array>
 	</dict>
 </array>
 ```
@@ -94,9 +94,11 @@ MSMySabayManager.shared.openStore(fromController: self) { result in
     switch result {
         case .purchaseMySabay(let hash):
             print("\(hash)")
+            //some work after success with MySabay
             break
         case .purchaseApple(let product):
             print("\(product.productIdentifier)")
+            //some work after success with Apple In-App purchase
             break
         case .purchaseFailed(let error):
             print("\(error.localizedDescription)")

@@ -1,15 +1,29 @@
 # Official MySabay SDK for iOS
-## Setup project info.plist
-### App Secret
+
+## Create your application
+
+Create your MySabay application at [MySabay App Dashboard](https://kh.mysabay.com:8443/index.html) and copy your `appId` and `appSecret`
+
+## Installing
+
+```bash
+pod 'MySabaySdk'
+```
+
+## Configuration
+
+Info.plist
+
+Replace `{appId}` `{appName}` and `{appSecret}` with your `appId`, `appName` and `appSecret`.
+
 ```xml
 <key>MySabayAppId</key>
-<string>55</string>
+<string>{appId}</string>
 <key>MySabayAppName</key>
-<string>ExampleApp</string>
+<string>{appName}</string>
 <key>MySabayAppSecret</key>
-<string>9c85c50a4362f687cd4507771ba81db5cf50eaa0b3008f4f943f77ba3ac6386b</string>
+<string>{appSecret}</string>
 ```
-### URL Scheme
 ```xml
 <key>CFBundleURLTypes</key>
 <array>
@@ -20,50 +34,130 @@
 		<string>aog</string>
 		<key>CFBundleURLSchemes</key>
 		<array>
-			<string>mysabay55</string>
+			<string>mysabay{appId}</string>
 		</array>
 	</dict>
 </array>
 ```
 
-## Token
-### Get Current Token
+AppDelegate.swift
+
 ```swift
-if let token = MSrToken.currentToken {}
-```
-### Checl Valid Token
-```swift
-if MSToken.isValid {}
+import MySabaySdk
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    MSMySabayManager.shared.addTransactionObserver()
+    return true
+}
+    
+func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    return MSMySabayManager.shared.handleOpenUrl(url: url)
+}
+    
+func applicationWillTerminate(_ application: UIApplication) {
+    MSMySabayManager.shared.removeTransactionObserver()
+}
 ```
 
-## Authentication
-### Login
+SceneDelegate.swift
+
 ```swift
+func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    MSMySabayManager.shared.handleOpenUrl(contexts: URLContexts)
+}
+```
+
+Login
+
+```swift
+import MySabaySdk
+
 MSMySabayManager.shared.logIn(fromController: self) { result in
     switch result {
-    case .success(let token):
-        print(token.tokenString!)
-        break
-    case .failure(let error):
-        print(error.localizedDescription)
-        break
+        case .loginSuccess(let token):
+            print("\(token.tokenString!)")
+            break
+        case .loginFailed(let error):
+            print(error.localizedDescription)
+            break
+        }
     }
 }
 ```
-### Logout
+
+Purchase
+
+```swift
+import MySabaySdk
+
+MSMySabayManager.shared.openStore(fromController: self) { result in
+    switch result {
+        case .purchaseMySabay(let hash):
+            print("\(hash)")
+            break
+        case .purchaseApple(let product):
+            print("\(product.productIdentifier)")
+            break
+        case .purchaseFailed(let error):
+            print("\(error.localizedDescription)")
+            break
+    }
+}
+```
+
+Get profile
+
+```swift
+import MySabaySdk
+
+MSMySabayManager.shared.getUserProfile { result in
+    switch result {
+        case .fetchSuccess(let profile):
+            //work with profile
+            break
+        case .fetchFailed(let error):
+            print("\(error.localizedDescription)")
+            break
+    }
+}
+```
+
+Refresh token
+
+```swift
+import MySabaySdk
+
+MSMySabayManager.shared.refreshToken { result in
+    switch result {
+        case .refreshSuccess(let token):
+            //work with token
+            break
+        case .refreshFailed(let error):
+            print("\(error.localizedDescription)")
+            break
+    }
+}
+```
+
+Get current token
+
+```swift
+if let token = MSToken.currentToken {
+
+}
+```
+
+Check valid token
+
+```swift
+if MSToken.isValid {
+
+}
+```
+
+Logout
+
 ```swift
 MSMySabayManager.shared.logOut()
 ```
 
-## Store
-```swift
-MSMySabayManager.shared.openStore(fromController: self) { result in
-    switch result {
-    case .success(_):
-        break
-    case .failure(let error):
-        print(error.localizedDescription)
-        break
-    }
-}
-```

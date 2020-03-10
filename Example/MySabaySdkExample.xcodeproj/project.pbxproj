@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02C34090B764D2B88570D68A /* Pods_MySabaySdkExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056F097D7BAC1ECDCB1F679A /* Pods_MySabaySdkExample.framework */; };
+		EBFBF81D2405227400C84C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFBF81C2405227400C84C37 /* AppDelegate.swift */; };
+		EBFBF81F2405227400C84C37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFBF81E2405227400C84C37 /* SceneDelegate.swift */; };
+		EBFBF8212405227400C84C37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFBF8202405227400C84C37 /* ViewController.swift */; };
+		EBFBF8242405227400C84C37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBFBF8222405227400C84C37 /* Main.storyboard */; };
+		EBFBF8262405227800C84C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBFBF8252405227800C84C37 /* Assets.xcassets */; };
+		EBFBF8292405227800C84C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBFBF8272405227800C84C37 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EBFBF8332405235500C84C37 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		056F097D7BAC1ECDCB1F679A /* Pods_MySabaySdkExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySabaySdkExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D9F1FCB847CD97A4BD4325B /* Pods-MySabaySdkExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySabaySdkExample.release.xcconfig"; path = "Target Support Files/Pods-MySabaySdkExample/Pods-MySabaySdkExample.release.xcconfig"; sourceTree = "<group>"; };
+		62923B153843E1002B8B96D4 /* Pods-MySabaySdkExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySabaySdkExample.debug.xcconfig"; path = "Target Support Files/Pods-MySabaySdkExample/Pods-MySabaySdkExample.debug.xcconfig"; sourceTree = "<group>"; };
+		EBFBF81A2405227400C84C37 /* MySabaySdkExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySabaySdkExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBFBF81C2405227400C84C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EBFBF81E2405227400C84C37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EBFBF8202405227400C84C37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EBFBF8232405227400C84C37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EBFBF8252405227800C84C37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EBFBF8282405227800C84C37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EBFBF82A2405227800C84C37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBFBF834240525DC00C84C37 /* MySabaySdkExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySabaySdkExample.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EBFBF8172405227400C84C37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02C34090B764D2B88570D68A /* Pods_MySabaySdkExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A8E4D9A81B8A056EE1ECBF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				62923B153843E1002B8B96D4 /* Pods-MySabaySdkExample.debug.xcconfig */,
+				2D9F1FCB847CD97A4BD4325B /* Pods-MySabaySdkExample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EBFBF7B02405219E00C84C37 = {
+			isa = PBXGroup;
+			children = (
+				EBFBF81B2405227400C84C37 /* MySabaySdkExample */,
+				EBFBF7BB2405219E00C84C37 /* Products */,
+				EBFBF82E2405235500C84C37 /* Frameworks */,
+				3A8E4D9A81B8A056EE1ECBF8 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		EBFBF7BB2405219E00C84C37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBFBF81A2405227400C84C37 /* MySabaySdkExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBFBF81B2405227400C84C37 /* MySabaySdkExample */ = {
+			isa = PBXGroup;
+			children = (
+				EBFBF834240525DC00C84C37 /* MySabaySdkExample.entitlements */,
+				EBFBF81C2405227400C84C37 /* AppDelegate.swift */,
+				EBFBF81E2405227400C84C37 /* SceneDelegate.swift */,
+				EBFBF8202405227400C84C37 /* ViewController.swift */,
+				EBFBF8222405227400C84C37 /* Main.storyboard */,
+				EBFBF8252405227800C84C37 /* Assets.xcassets */,
+				EBFBF8272405227800C84C37 /* LaunchScreen.storyboard */,
+				EBFBF82A2405227800C84C37 /* Info.plist */,
+			);
+			path = MySabaySdkExample;
+			sourceTree = "<group>";
+		};
+		EBFBF82E2405235500C84C37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				056F097D7BAC1ECDCB1F679A /* Pods_MySabaySdkExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EBFBF8192405227400C84C37 /* MySabaySdkExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBFBF82B2405227800C84C37 /* Build configuration list for PBXNativeTarget "MySabaySdkExample" */;
+			buildPhases = (
+				1BF8477BA3DE5C9F5A714B5A /* [CP] Check Pods Manifest.lock */,
+				EBFBF8162405227400C84C37 /* Sources */,
+				EBFBF8172405227400C84C37 /* Frameworks */,
+				EBFBF8182405227400C84C37 /* Resources */,
+				EBFBF8332405235500C84C37 /* Embed Frameworks */,
+				A893CE9FB6DA1BA6F22B10E1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MySabaySdkExample;
+			productName = MySabaySdkExample;
+			productReference = EBFBF81A2405227400C84C37 /* MySabaySdkExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBFBF7B12405219E00C84C37 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Sabay Digital Corporation";
+				TargetAttributes = {
+					EBFBF8192405227400C84C37 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = EBFBF7B42405219E00C84C37 /* Build configuration list for PBXProject "MySabaySdkExample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EBFBF7B02405219E00C84C37;
+			productRefGroup = EBFBF7BB2405219E00C84C37 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EBFBF8192405227400C84C37 /* MySabaySdkExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EBFBF8182405227400C84C37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBFBF8292405227800C84C37 /* LaunchScreen.storyboard in Resources */,
+				EBFBF8262405227800C84C37 /* Assets.xcassets in Resources */,
+				EBFBF8242405227400C84C37 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BF8477BA3DE5C9F5A714B5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MySabaySdkExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A893CE9FB6DA1BA6F22B10E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MySabaySdkExample/Pods-MySabaySdkExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MySabaySdkExample/Pods-MySabaySdkExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MySabaySdkExample/Pods-MySabaySdkExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EBFBF8162405227400C84C37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBFBF8212405227400C84C37 /* ViewController.swift in Sources */,
+				EBFBF81D2405227400C84C37 /* AppDelegate.swift in Sources */,
+				EBFBF81F2405227400C84C37 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EBFBF8222405227400C84C37 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBFBF8232405227400C84C37 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EBFBF8272405227800C84C37 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBFBF8282405227800C84C37 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EBFBF7CC2405219E00C84C37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EBFBF7CD2405219E00C84C37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EBFBF82C2405227800C84C37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62923B153843E1002B8B96D4 /* Pods-MySabaySdkExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MySabaySdkExample/MySabaySdkExample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = 3QS35YK76Q;
+				INFOPLIST_FILE = MySabaySdkExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kh.com.sabay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EBFBF82D2405227800C84C37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D9F1FCB847CD97A4BD4325B /* Pods-MySabaySdkExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MySabaySdkExample/MySabaySdkExample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = 3QS35YK76Q;
+				INFOPLIST_FILE = MySabaySdkExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kh.com.sabay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EBFBF7B42405219E00C84C37 /* Build configuration list for PBXProject "MySabaySdkExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBFBF7CC2405219E00C84C37 /* Debug */,
+				EBFBF7CD2405219E00C84C37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBFBF82B2405227800C84C37 /* Build configuration list for PBXNativeTarget "MySabaySdkExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBFBF82C2405227800C84C37 /* Debug */,
+				EBFBF82D2405227800C84C37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EBFBF7B12405219E00C84C37 /* Project object */;
+}

@@ -16,6 +16,14 @@ Info.plist
 
 Replace `{appId}` `{appName}` and `{appSecret}` with your `appId`, `appName` and `appSecret`.
 
+MySabay is providing sandbox environment for testing. To point to testing environment, just update `MySabayAppSandbox` to `TRUE` and vice versus.
+
+You can update your theme color by using pre-define themes:
+
+`Soyo`: for light theme
+
+`MySabay`: for dark theme
+
 ```xml
 <key>MySabayAppId</key>
 <string>{appId}</string>
@@ -23,7 +31,12 @@ Replace `{appId}` `{appName}` and `{appSecret}` with your `appId`, `appName` and
 <string>{appName}</string>
 <key>MySabayAppSecret</key>
 <string>{appSecret}</string>
+<key>MySabayAppTheme</key>
+<string>MySabay</string>
+<key>MySabayAppSandbox</key>
+<true/>
 ```
+
 ```xml
 <key>CFBundleURLTypes</key>
 <array>

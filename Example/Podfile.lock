@@ -1,5 +1,5 @@
 PODS:
-  - MySabaySdk (0.0.8)
+  - MySabaySdk (0.0.9)
 
 DEPENDENCIES:
   - MySabaySdk (~> 0.0.7)
@@ -9,7 +9,7 @@ SPEC REPOS:
     - MySabaySdk
 
 SPEC CHECKSUMS:
-  MySabaySdk: f85d3a827a34dde83e55f2bd5b5599f041ea39cc
+  MySabaySdk: ae4ea2d4aa9da8956c5e33167ff6bf250443147b
 
 PODFILE CHECKSUM: fd1e0ccb876a0f99f62eee3e74a1eaa0ceee4854
 

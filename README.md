@@ -48,9 +48,12 @@ var configure = MSConfigure()
 configure.sandboxMode = true
 configure.sdkTheme = .light
 MSMySabaySDK.configure(configure: configure)
+```
 
-or 
+or
 
+
+```swift
 MSMySabaySDK.configure()
 ```
 

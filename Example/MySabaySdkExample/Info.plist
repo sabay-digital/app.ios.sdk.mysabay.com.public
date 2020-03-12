@@ -39,12 +39,12 @@
 	<string>55</string>
 	<key>MySabayAppName</key>
 	<string>ExampleApp</string>
+	<key>MySabayAppSandbox</key>
+	<true/>
 	<key>MySabayAppSecret</key>
 	<string>9c85c50a4362f687cd4507771ba81db5cf50eaa0b3008f4f943f77ba3ac6386b</string>
 	<key>MySabayAppTheme</key>
 	<string>MySabay</string>
-	<key>MySabayAppSandbox</key>
-	<true/>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

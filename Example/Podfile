@@ -4,6 +4,6 @@ target 'MySabaySdkExample' do
 
   use_frameworks!
 
-  pod 'MySabaySdk', '~> 0.0.7'
+  pod 'MySabaySdk', '0.0.11'
 
 end

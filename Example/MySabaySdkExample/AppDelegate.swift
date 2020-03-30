@@ -15,15 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        MSMySabayManager.shared.addTransactionObserver()
+        var configure = MSConfigure()
+        configure.sandboxMode = true
+        configure.sdkTheme = .light
+        MSMySabaySDK.configure(configure: configure)
+        MSMySabaySDK.shared.addTransactionObserver()
         return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        return MSMySabayManager.shared.handleOpenUrl(url: url)
+        return MSMySabaySDK.shared.handleOpenUrl(url: url)
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        MSMySabayManager.shared.removeTransactionObserver()
+        MSMySabaySDK.shared.removeTransactionObserver()
     }
 }

@@ -1,16 +1,16 @@
 PODS:
-  - MySabaySdk (0.0.9)
+  - MySabaySdk (0.0.11)
 
 DEPENDENCIES:
-  - MySabaySdk (~> 0.0.7)
+  - MySabaySdk (= 0.0.11)
 
 SPEC REPOS:
   trunk:
     - MySabaySdk
 
 SPEC CHECKSUMS:
-  MySabaySdk: ae4ea2d4aa9da8956c5e33167ff6bf250443147b
+  MySabaySdk: d155f6531be90e13609660488017a2de6678ffab
 
-PODFILE CHECKSUM: fd1e0ccb876a0f99f62eee3e74a1eaa0ceee4854
+PODFILE CHECKSUM: 7676e8c33eb9385766c571b9ac069f73915fecf3
 
 COCOAPODS: 1.9.0

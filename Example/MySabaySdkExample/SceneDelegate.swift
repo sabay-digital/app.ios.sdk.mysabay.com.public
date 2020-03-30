@@ -51,7 +51,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        MSMySabayManager.shared.handleOpenUrl(contexts: URLContexts)
+        MSMySabaySDK.shared.handleOpenUrl(contexts: URLContexts)
     }
 }
 

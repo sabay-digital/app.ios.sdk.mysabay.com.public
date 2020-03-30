@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonLoginTapped(c: UIButton) {
-        MSMySabayManager.shared.logIn(fromController: self) { result in
+        MSMySabaySDK.shared.logIn(fromController: self) { result in
             switch result {
             case .loginSuccess(let token):
                 print("\(token.tokenString!)")
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonStoreTapped(c: UIButton) {
-        MSMySabayManager.shared.openStore(fromController: self) { result in
+        MSMySabaySDK.shared.openStore(fromController: self) { result in
             switch result {
             case .purchaseMySabay(let hash):
                 print("\(hash)")
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     @IBAction func buttonLogoutTapped(c: UIButton) {
         if MSToken.isValid {
             let noAction = UIAlertAction(title: "Cancel", style: .default) { action in }
-            let yesAction = UIAlertAction(title: "Logout", style: .destructive) { action in MSMySabayManager.shared.logOut() }
+            let yesAction = UIAlertAction(title: "Logout", style: .destructive) { action in MSMySabaySDK.shared.logOut() }
             let controller = UIAlertController(title: "Are you sure you want to logout?", message: "", preferredStyle: .alert)
             controller.addAction(noAction)
             controller.addAction(yesAction)

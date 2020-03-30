@@ -47,25 +47,41 @@ Next, it is time to config your Xcode project to update Info.plist, AppDelegate 
 </array>
 ```
 
-> !!! Replace `{appId}`, `{appName}` and `{appSecret}` with your `appId`, `appName` and `appSecret`. 
+Configuration
+
+MSMySabaySDK has default configuration with dark theme and sandbox url.
+
+```swift
+var configure = MSConfigure()
+configure.sandboxMode = true
+configure.sdkTheme = .light
+MSMySabaySDK.configure(configure: configure)
+```
+
+or
 
 
-**AppDelegate.swift**
+```swift
+MSMySabaySDK.configure()
+```
+
+AppDelegate.swift
 
 ```swift
 import MySabaySdk
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    MSMySabayManager.shared.addTransactionObserver()
+    MSMySabaySDK.configure()
+    MSMySabaySDK.shared.addTransactionObserver()
     return true
 }
     
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-    return MSMySabayManager.shared.handleOpenUrl(url: url)
+    return MSMySabaySDK.shared.handleOpenUrl(url: url)
 }
     
 func applicationWillTerminate(_ application: UIApplication) {
-    MSMySabayManager.shared.removeTransactionObserver()
+    MSMySabaySDK.shared.removeTransactionObserver()
 }
 ```
 
@@ -73,7 +89,7 @@ func applicationWillTerminate(_ application: UIApplication) {
 
 ```swift
 func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-    MSMySabayManager.shared.handleOpenUrl(contexts: URLContexts)
+    MSMySabaySDK.shared.handleOpenUrl(contexts: URLContexts)
 }
 ```
 
@@ -89,7 +105,7 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
 ```swift
 import MySabaySdk
 
-MSMySabayManager.shared.logIn(fromController: self) { result in
+MSMySabaySDK.shared.logIn(fromController: self) { result in
     switch result {
         case .loginSuccess(let token):
             print("\(token.tokenString!)")
@@ -108,7 +124,7 @@ MSMySabayManager.shared.logIn(fromController: self) { result in
 ```swift
 import MySabaySdk
 
-MSMySabayManager.shared.openStore(fromController: self) { result in
+MSMySabaySDK.shared.openStore(fromController: self) { result in
     switch result {
         case .purchaseMySabay(let hash):
             print("\(hash)")
@@ -132,7 +148,7 @@ MSMySabayManager.shared.openStore(fromController: self) { result in
 ```swift
 import MySabaySdk
 
-MSMySabayManager.shared.getUserProfile { result in
+MSMySabaySDK.shared.getUserProfile { result in
     switch result {
         case .fetchSuccess(let profile):
             //work with profile
@@ -151,7 +167,7 @@ MSMySabayManager.shared.getUserProfile { result in
 ```swift
 import MySabaySdk
 
-MSMySabayManager.shared.refreshToken { result in
+MSMySabaySDK.shared.refreshToken { result in
     switch result {
         case .refreshSuccess(let token):
             //work with token
@@ -168,9 +184,7 @@ MSMySabayManager.shared.refreshToken { result in
 *  **Get current token**
 
 ```swift
-if let token = MSToken.currentToken {
-
-}
+if let token = MSToken.currentToken {}
 ```
 
 
@@ -178,15 +192,13 @@ if let token = MSToken.currentToken {
 *  **Check valid token**
 
 ```swift
-if MSToken.isValid {
-
-}
+if MSToken.isValid {}
 ```
 
 
 *  **Logout**
 
 ```swift
-MSMySabayManager.shared.logOut()
+MSMySabaySDK.shared.logOut()
 ```
 

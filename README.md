@@ -1,20 +1,26 @@
 # Official MySabay SDK for iOS
 
+This is the official MySabay SDK for native iOS application. To use this SDK, you can follow the guides below or download the test with the example project we have in this repository.
+
 ## Create your application
 
-Create your MySabay application at [MySabay App Dashboard](https://kh.mysabay.com:8443/index.html) and copy your `appId` and `appSecret`
+Create your MySabay application if you don't have one yet at [MySabay App Dashboard](https://kh.mysabay.com:8443/index.html) and copy your `appId` 
+and `appSecret` for the integration.
 
 ## Installing
+
+The SDK is published on Cocoapods, so you can simply install into your project with pod or you can also download and manually install at [MySabay SDK](https://github.com/sabay-digital/app.ios.sdk.mysabay.com.public/raw/master/MySabaySdk.zip)
 
 ```bash
 pod 'MySabaySdk'
 ```
 
 ## Configuration
+Next, it is time to config your Xcode project to update Info.plist, AppDelegate and SceneDelegate.
 
-Info.plist
+**Info.plist**
 
-Replace `{appId}` `{appName}` and `{appSecret}` with your `appId`, `appName` and `appSecret`.
+> Add the following contents to your Info.plist file 
 
 ```xml
 <key>MySabayAppId</key>
@@ -79,7 +85,7 @@ func applicationWillTerminate(_ application: UIApplication) {
 }
 ```
 
-SceneDelegate.swift
+**SceneDelegate.swift**
 
 ```swift
 func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
@@ -87,7 +93,14 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
 }
 ```
 
-Login
+## Integration
+
+> Note that in order to use the store and checkout function, the user must login first. 
+> Follow the guide below for each functions provided by the SDK:
+
+
+
+*  **Login**
 
 ```swift
 import MySabaySdk
@@ -105,7 +118,8 @@ MSMySabaySDK.shared.logIn(fromController: self) { result in
 }
 ```
 
-Purchase
+
+*  **Store and checkout**
 
 ```swift
 import MySabaySdk
@@ -127,7 +141,9 @@ MSMySabaySDK.shared.openStore(fromController: self) { result in
 }
 ```
 
-Get profile
+
+
+*  **Get profile**
 
 ```swift
 import MySabaySdk
@@ -144,7 +160,9 @@ MSMySabaySDK.shared.getUserProfile { result in
 }
 ```
 
-Refresh token
+
+
+*  **Refresh token**
 
 ```swift
 import MySabaySdk
@@ -161,19 +179,24 @@ MSMySabaySDK.shared.refreshToken { result in
 }
 ```
 
-Get current token
+
+
+*  **Get current token**
 
 ```swift
 if let token = MSToken.currentToken {}
 ```
 
-Check valid token
+
+
+*  **Check valid token**
 
 ```swift
 if MSToken.isValid {}
 ```
 
-Logout
+
+*  **Logout**
 
 ```swift
 MSMySabaySDK.shared.logOut()

@@ -43,6 +43,8 @@ Replace `{appId}` `{appName}` and `{appSecret}` with your `appId`, `appName` and
 
 Configuration
 
+MSMySabaySDK has default configuration width dark theme and sandbox url.
+
 ```swift
 var configure = MSConfigure()
 configure.sandboxMode = true

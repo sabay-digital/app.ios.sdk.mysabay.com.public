@@ -7,6 +7,11 @@ This is the official MySabay SDK for native iOS application. To use this SDK, yo
 Create your MySabay application if you don't have one yet at [MySabay App Dashboard](https://kh.mysabay.com:8443/index.html) and copy your `appId` 
 and `appSecret` for the integration.
 
+## Workflow
+
+### Login flow
+<img src="Images/user-login-flow.png">
+
 ## Installing
 
 The SDK is published on Cocoapods, so you can simply install into your project with pod or you can also download and manually install at [MySabay SDK](https://github.com/sabay-digital/app.ios.sdk.mysabay.com.public/raw/master/MySabaySdk.zip)
@@ -202,3 +207,6 @@ if MSToken.isValid {}
 MSMySabaySDK.shared.logOut()
 ```
 
+## mySabay API
+### Server side validation
+In order for the CP server to validate the user access token received from the client as valid, mySabay also hosts pulic user api for fetching user profile and validating token. The API document is available [here](https://api-reference.mysabay.com/).

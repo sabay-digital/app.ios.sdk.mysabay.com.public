@@ -12,6 +12,9 @@ and `appSecret` for the integration.
 ### Login flow
 <img src="Images/user-login-flow.png">
 
+### Payment flow
+<img src="Images/payment-flow.png">
+
 ## Installing
 
 The SDK is published on Cocoapods, so you can simply install into your project with pod or you can also download and manually install at [MySabay SDK](https://github.com/sabay-digital/app.ios.sdk.mysabay.com.public/raw/master/MySabaySdk.zip)

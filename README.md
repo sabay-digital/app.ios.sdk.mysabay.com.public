@@ -115,14 +115,15 @@ import MySabaySdk
 
 MSMySabaySDK.shared.logIn(fromController: self) { result in
     switch result {
-        case .loginSuccess(let token):
-            print("\(token.tokenString!)")
+        case .loginSuccess(let refreshToken, let accessToken):
+            print("RefreshToken: \(refreshToken.tokenString!)")
+            print("AccessToken: \(accessToken.tokenString!)")
+            print("AccessToen Expire: \(accessToken.expirationTime!)")
             break
         case .loginFailed(let error):
             print(error.localizedDescription)
             break
         }
-    }
 }
 ```
 
@@ -134,18 +135,18 @@ import MySabaySdk
 
 MSMySabaySDK.shared.openStore(fromController: self) { result in
     switch result {
-        case .purchaseMySabay(let hash):
-            print("\(hash)")
-            //some work after success with MySabay
+        case .purchaseMySabay(let purchase):
+            print("Hash: \(purchase.purchaseHash!)")
+            print("Amount: \(purchase.amount!)")
+            print("AssetCode: \(purchase.assetCode!)")
             break
         case .purchaseApple(let product):
-            print("\(product.productIdentifier)")
-            //some work after success with Apple In-App purchase
+            print("Product: \(product.productIdentifier)")
             break
         case .purchaseFailed(let error):
             print("\(error.localizedDescription)")
             break
-    }
+        }
 }
 ```
 
@@ -159,10 +160,17 @@ import MySabaySdk
 MSMySabaySDK.shared.getUserProfile { result in
     switch result {
         case .fetchSuccess(let profile):
-            //work with profile
+            print("Profile uuid: \(profile.uuid!)")
+            print("Profile mySabayUserId: \(profile.mySabayUserId!)")
+            print("Profile serviceId: \(profile.serviceId!)")
+            print("Profile serviceUserId: \(profile.serviceUserId!)")
+            print("Profile lastLogin: \(profile.lastLogin!)")
+            print("Profile status: \(profile.status!)")
+            print("Profile createdAt: \(profile.createdAt!)")
+            print("Profile updatedAt: \(profile.updatedAt!)")
             break
         case .fetchFailed(let error):
-            print("\(error.localizedDescription)")
+            print(error.localizedDescription)
             break
     }
 }
@@ -175,13 +183,15 @@ MSMySabaySDK.shared.getUserProfile { result in
 ```swift
 import MySabaySdk
 
-MSMySabaySDK.shared.refreshToken { result in
+MSMySabaySDK.shared.refreshTokens { result in
     switch result {
-        case .refreshSuccess(let token):
-            //work with token
+        case .refreshSuccess(let refreshToken, let accessToken):
+            print("RefreshToken: \(refreshToken.tokenString!)")
+            print("AccessToken: \(accessToken.tokenString!)")
+            print("AccessToen Expire: \(accessToken.expirationTime!)")
             break
         case .refreshFailed(let error):
-            print("\(error.localizedDescription)")
+            print(error.localizedDescription)
             break
     }
 }
@@ -192,7 +202,8 @@ MSMySabaySDK.shared.refreshToken { result in
 *  **Get current token**
 
 ```swift
-if let token = MSToken.currentToken {}
+if let accessToken = MSAccessToken.currentToken {}
+if let refreshToken = MSRefreshToken.currentToken {}
 ```
 
 
@@ -200,14 +211,26 @@ if let token = MSToken.currentToken {}
 *  **Check valid token**
 
 ```swift
-if MSToken.isValid {}
+if MSAccessToken.isValid {}
+if MSRefreshToken.isValid {}
 ```
 
 
 *  **Logout**
 
 ```swift
-MSMySabaySDK.shared.logOut()
+import MySabaySdk
+
+MSMySabaySDK.shared.logout { result in
+    switch result {
+        case .logoutSuccess(let message):
+            print("\(message)")
+            break
+        case .logoutFailed(let error):
+            print("\(error.localizedDescription)")
+            break
+    }
+}
 ```
 
 ## mySabay API

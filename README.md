@@ -13,9 +13,17 @@ and `appSecret` for the integration.
 <img src="Images/user-login-flow.png">
 
 ### Payment flow
-<img src="Images/payment-flow.png">
+There are 2 different payment flows in the SDK: 1). payment with Apple In App Purchase 2). payment with mySabay Wallet which includes different payment options such as Telco, Sabay Coin, and the list will continue as we are working to add more payment service providers such as banks. You will have to implement the SDK payment following the 2 flows below
 
-## Installing
+#### 1). Payment with In-App Purchase:
+<img src="Images/payment-flow-iap.png">
+
+#### 2). Payment with mySabay Wallet:
+<img src="Images/payment-flow-ssn.png">
+
+Refer to the API document below for payment receipt validation of both payments.
+
+## Installation
 
 The SDK is published on Cocoapods, so you can simply install into your project with pod or you can also download and manually install at [MySabay SDK](https://github.com/sabay-digital/app.ios.sdk.mysabay.com.public/raw/master/MySabaySdk.zip)
 
@@ -235,4 +243,6 @@ MSMySabaySDK.shared.logout { result in
 
 ## mySabay API
 ### Server side validation
-In order for the CP server to validate the user access token received from the client as valid, mySabay also hosts pulic user api for fetching user profile and validating token. The API document is available [here](https://api-reference.mysabay.com/).
+- In order for the CP server to validate the user access token received from the client as valid, mySabay also hosts pulic user api for fetching user profile and validating token. The API document is available [here](https://api-reference.mysabay.com/).
+
+- In order for the CP server to validate the payment receipt from In-App Purchase or mySabay wallet, mySabay also hosts public store api available [here](https://api-reference.mysabay.com/?urls.primaryName=mySabay%20SDK%20-%20Store%20API).

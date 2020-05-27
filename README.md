@@ -4,21 +4,25 @@ This is the official MySabay SDK for native iOS application. To use this SDK, yo
 
 ## Create your application
 
-Create your MySabay application if you don't have one yet at [MySabay App Dashboard](https://kh.mysabay.com:8443/index.html) and copy your `appId` 
+Create your MySabay application if you don't have one yet at [MySabay App Dashboard](https://kh.mysabay.com:8443/index.html) and copy your `appId`
 and `appSecret` for the integration.
 
 ## Workflow
 
 ### Login flow
+
 <img src="Images/user-login-flow.png">
 
 ### Payment flow
+
 There are 2 different payment flows in the SDK: 1). payment with Apple In App Purchase 2). payment with mySabay Wallet which includes different payment options such as Telco, Sabay Coin, and the list will continue as we are working to add more payment service providers such as banks. You will have to implement the SDK payment following the 2 flows below
 
 #### 1). Payment with In-App Purchase:
+
 <img src="Images/payment-flow-iap.png">
 
 #### 2). Payment with mySabay Wallet:
+
 <img src="Images/payment-flow-ssn.png">
 
 Refer to the API document below for payment receipt validation of both payments.
@@ -32,11 +36,12 @@ pod 'MySabaySdk'
 ```
 
 ## Configuration
+
 Next, it is time to config your Xcode project to update Info.plist, AppDelegate and SceneDelegate.
 
 **Info.plist**
 
-> Add the following contents to your Info.plist file 
+> Add the following contents to your Info.plist file
 
 ```xml
 <key>MySabayAppId</key>
@@ -76,7 +81,6 @@ MSMySabaySDK.configure(configure: configure)
 
 or
 
-
 ```swift
 MSMySabaySDK.configure()
 ```
@@ -91,11 +95,11 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     MSMySabaySDK.shared.addTransactionObserver()
     return true
 }
-    
+
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
     return MSMySabaySDK.shared.handleOpenUrl(url: url)
 }
-    
+
 func applicationWillTerminate(_ application: UIApplication) {
     MSMySabaySDK.shared.removeTransactionObserver()
 }
@@ -111,12 +115,10 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
 
 ## Integration
 
-> Note that in order to use the store and checkout function, the user must login first. 
+> Note that in order to use the store and checkout function, the user must login first.
 > Follow the guide below for each functions provided by the SDK:
 
-
-
-*  **Login**
+- **Login**
 
 ```swift
 import MySabaySdk
@@ -135,8 +137,7 @@ MSMySabaySDK.shared.logIn(fromController: self) { result in
 }
 ```
 
-
-*  **Store and checkout**
+- **Store and checkout**
 
 ```swift
 import MySabaySdk
@@ -158,9 +159,7 @@ MSMySabaySDK.shared.openStore(fromController: self) { result in
 }
 ```
 
-
-
-*  **Get profile**
+- **Get profile**
 
 ```swift
 import MySabaySdk
@@ -184,9 +183,7 @@ MSMySabaySDK.shared.getUserProfile { result in
 }
 ```
 
-
-
-*  **Refresh token**
+- **Refresh token**
 
 ```swift
 import MySabaySdk
@@ -205,31 +202,43 @@ MSMySabaySDK.shared.refreshTokens { result in
 }
 ```
 
+- **Verify token**
 
+```swift
+import MySabaySdk
 
-*  **Get current token**
+MSMySabaySDK.shared.verifyToken { result in
+    switch result {
+        case .verifySuccess(let status):
+            print("Valid: \(status)")
+            break
+        case .verifyFailed(let error):
+            print(error.localizedDescription)
+            break
+    }
+}
+```
+
+- **Get current token**
 
 ```swift
 if let accessToken = MSAccessToken.currentToken {}
 if let refreshToken = MSRefreshToken.currentToken {}
 ```
 
-
-
-*  **Check valid token**
+- **Check valid token**
 
 ```swift
 if MSAccessToken.isValid {}
 if MSRefreshToken.isValid {}
 ```
 
-
-*  **Logout**
+- **Logout**
 
 ```swift
 import MySabaySdk
 
-MSMySabaySDK.shared.logout { result in
+MSMySabaySDK.shared.logout(all: true) { result in
     switch result {
         case .logoutSuccess(let message):
             print("\(message)")
@@ -242,7 +251,9 @@ MSMySabaySDK.shared.logout { result in
 ```
 
 ## mySabay API
+
 ### Server side validation
+
 - In order for the CP server to validate the user access token received from the client as valid, mySabay also hosts pulic user api for fetching user profile and validating token. The API document is available [here](https://api-reference.mysabay.com/).
 
 - In order for the CP server to validate the payment receipt from In-App Purchase or mySabay wallet, mySabay also hosts public store api available [here](https://api-reference.mysabay.com/?urls.primaryName=mySabay%20SDK%20-%20Store%20API).

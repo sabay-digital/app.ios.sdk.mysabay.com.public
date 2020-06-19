@@ -1,9 +1,0 @@
-platform :ios, '11.0'
-
-target 'MySabaySdkExample' do
-
-  use_frameworks!
-
-  pod 'MySabaySdk', '1.0.0'
-
-end

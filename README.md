@@ -73,9 +73,14 @@ Configuration
 MSMySabaySDK has default configuration with dark theme and sandbox url.
 
 ```swift
+let theme = MSTheme()
+var appearence = MSAppearence()
+appearence.title = "My Sample"
+appearence.theme = theme
 var configure = MSConfigure()
-configure.sandboxMode = true
-configure.sdkTheme = .light
+configure.sandBox = true
+configure.appTheme = .dark
+configure.appearence = appearence
 MSMySabaySDK.configure(configure: configure)
 ```
 
@@ -133,7 +138,7 @@ MSMySabaySDK.shared.logIn(fromController: self) { result in
         case .loginFailed(let error):
             print(error.localizedDescription)
             break
-        }
+    }
 }
 ```
 
@@ -144,18 +149,19 @@ import MySabaySdk
 
 MSMySabaySDK.shared.openStore(fromController: self) { result in
     switch result {
+        case .purchaseApple(let product):
+            print("Product: \(product.productIdentifier)")
+            break
         case .purchaseMySabay(let purchase):
             print("Hash: \(purchase.purchaseHash!)")
             print("Amount: \(purchase.amount!)")
             print("AssetCode: \(purchase.assetCode!)")
-            break
-        case .purchaseApple(let product):
-            print("Product: \(product.productIdentifier)")
+            print("PackageId: \(purchase.packageId!)")
             break
         case .purchaseFailed(let error):
             print("\(error.localizedDescription)")
             break
-        }
+    }
 }
 ```
 
@@ -168,6 +174,7 @@ MSMySabaySDK.shared.getUserProfile { result in
     switch result {
         case .fetchSuccess(let profile):
             print("Profile uuid: \(profile.uuid!)")
+            print("Profile balance: \(profile.balance!)")
             print("Profile mySabayUserId: \(profile.mySabayUserId!)")
             print("Profile serviceId: \(profile.serviceId!)")
             print("Profile serviceUserId: \(profile.serviceUserId!)")
@@ -238,7 +245,7 @@ if MSRefreshToken.isValid {}
 ```swift
 import MySabaySdk
 
-MSMySabaySDK.shared.logout(all: true) { result in
+MSMySabaySDK.shared.logout(all: false) { result in
     switch result {
         case .logoutSuccess(let message):
             print("\(message)")
@@ -250,7 +257,7 @@ MSMySabaySDK.shared.logout(all: true) { result in
 }
 ```
 
-## mySabay API
+## MySabay API
 
 ### Server side validation
 

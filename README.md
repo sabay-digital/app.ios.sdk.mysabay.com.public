@@ -128,7 +128,7 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
 ```swift
 import MySabaySdk
 
-MSMySabaySDK.shared.logIn(fromController: self) { result in
+MSMySabaySDK.shared.logIn { result in
     switch result {
         case .loginSuccess(let refreshToken, let accessToken):
             print("RefreshToken: \(refreshToken.tokenString!)")
@@ -147,7 +147,7 @@ MSMySabaySDK.shared.logIn(fromController: self) { result in
 ```swift
 import MySabaySdk
 
-MSMySabaySDK.shared.openStore(fromController: self) { result in
+MSMySabaySDK.shared.openStore { result in
     switch result {
         case .purchaseApple(let product):
             print("Product: \(product.productIdentifier)")

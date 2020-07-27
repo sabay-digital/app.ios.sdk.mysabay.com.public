@@ -149,8 +149,9 @@ import MySabaySdk
 
 MSMySabaySDK.shared.openStore { result in
     switch result {
-        case .purchaseApple(let product):
+        case .purchaseApple(let product, let receiptData):
             print("Product: \(product.productIdentifier)")
+            print("ReceiptData: \(receiptData)")
             break
         case .purchaseMySabay(let purchase):
             print("Hash: \(purchase.hash!)")

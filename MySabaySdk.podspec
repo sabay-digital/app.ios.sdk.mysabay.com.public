@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "MySabaySdk"
   
-  spec.version      = "1.0.20"
+  spec.version      = "1.0.21"
   
   spec.summary      = "Official MySabay SDK in Swift."
   

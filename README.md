@@ -113,6 +113,8 @@ func applicationWillTerminate(_ application: UIApplication) {
 **SceneDelegate.swift**
 
 ```swift
+import MySabaySdk
+
 func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
     MSMySabaySDK.shared.handleOpenUrl(contexts: URLContexts)
 }
@@ -250,6 +252,12 @@ if MSRefreshToken.isValid {}
 if let accessToken = MSAccessToken.currentToken {}
 if let refreshToken = MSRefreshToken.currentToken {}
 ```
+
+- **Checking Session**
+  
+The app that uses MySabay SDK does not need to check if the session exist. The App calls the SDK's login everytime the it starts. The SDK then checks if the session exist, if the session doesn't exist the SDK opens the login page for the user to login to a new session.
+
+The SDK also uses `MSAccessToken.isValid {}` to validate the token and `MSAccessToken.currentToken {}` to get the current token if it's valid.
 
 ## MySabay API
 

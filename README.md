@@ -27,12 +27,44 @@ There are 2 different payment flows in the SDK: 1). payment with Apple In App Pu
 
 Refer to the API document below for payment receipt validation of both payments.
 
+## MySabaySDK Sample App
+
+This repo contains a sample app which uses MySabaySDK. To run the sample app, make sure you have a stable version of XCode installed on your machine. Then do the followings:
+
+1. Open XCode
+2. Click `Open another project...`
+3. Navigate to the project folder and go into `MySabaySDKSampleApp`
+4. Select `MySabaySDKSampleApp.xcodeproj` file and click `Open`
+5. Once the project is open, select a simulator or generic device you wish to run the app.
+6. Click on the Play button (`Build then run the current scheme`)
+
 ## Installation
 
 The SDK is published on Cocoapods, so you can simply install into your project with pod or you can also download and manually install at [MySabay SDK](https://github.com/sabay-digital/app.ios.sdk.mysabay.com.public/raw/master/MySabaySdk.zip)
 
+Add the following line to your `Podfile`
 ```bash
 pod 'MySabaySdk'
+```
+
+If you don't have a Podfile, you can first initialize it.
+```bash
+$ pod init
+```
+
+Open the `Podfile` and you would see something like this.
+```
+platform :ios, '8.0'
+use_frameworks!
+
+target 'MyApp' do
+    // Add pod 'MySabaySdk' to this line
+end
+```
+
+Then you can simply run
+```bash
+$ pod install
 ```
 
 ## Configuration

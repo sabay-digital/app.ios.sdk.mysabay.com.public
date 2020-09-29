@@ -1,0 +1,11 @@
+framework module MySabaySdk {
+  umbrella header "MySabaySdk.h"
+
+  export *
+  module * { export * }
+}
+
+module MySabaySdk.Swift {
+    header "MySabaySdk-Swift.h"
+    requires objc
+}

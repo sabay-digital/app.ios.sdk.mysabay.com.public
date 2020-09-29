@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MySabaySdkExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VZ-z8-aM9">
+                                <rect key="frame" x="137" y="144" width="140" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="9au-yY-gAC"/>
+                                    <constraint firstAttribute="height" constant="36" id="KQw-Kc-piX"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="40" minY="0.0" maxX="40" maxY="0.0"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonLoginTappedWithC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Pg-h5-yoo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YqV-jM-bhL">
+                                <rect key="frame" x="137" y="200" width="140" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="YbF-L1-BhB"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="fT3-sa-eLS"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="40" minY="0.0" maxX="40" maxY="0.0"/>
+                                <state key="normal" title="Profile">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonProfileTappedWithC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="40s-CA-oWu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOR-vt-0od">
+                                <rect key="frame" x="137" y="256" width="140" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="FGn-aB-Ns9"/>
+                                    <constraint firstAttribute="height" constant="36" id="qZj-nm-xnC"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="40" minY="0.0" maxX="40" maxY="0.0"/>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonRefreshTokensTappedWithC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hjg-im-tph"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3G-XK-lpK">
+                                <rect key="frame" x="137" y="368" width="140" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="jhI-fY-ABO"/>
+                                    <constraint firstAttribute="height" constant="36" id="jxk-1P-FpG"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="40" minY="0.0" maxX="40" maxY="0.0"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonLogoutTappedWithC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jn8-pP-6s8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26K-XG-CcV">
+                                <rect key="frame" x="137" y="312" width="140" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="MJ1-Ax-2eb"/>
+                                    <constraint firstAttribute="height" constant="36" id="PhX-Cv-e3v"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="40" minY="0.0" maxX="40" maxY="0.0"/>
+                                <state key="normal" title="Store">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonStoreTappedWithC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6MF-cg-9eU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2KU-d9-Zuy">
+                                <rect key="frame" x="137" y="424" width="140" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="2Gh-Th-yzH"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="hBK-eT-YoC"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="40" minY="0.0" maxX="40" maxY="0.0"/>
+                                <state key="normal" title="Verify">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonVerifyTokenTappedWithC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="65L-Z8-gu3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="y3G-XK-lpK" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4S4-iu-QTL"/>
+                            <constraint firstItem="SOR-vt-0od" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DM7-Sr-K2V"/>
+                            <constraint firstItem="26K-XG-CcV" firstAttribute="top" secondItem="SOR-vt-0od" secondAttribute="bottom" constant="20" id="EO5-g6-jIJ"/>
+                            <constraint firstItem="y3G-XK-lpK" firstAttribute="top" secondItem="26K-XG-CcV" secondAttribute="bottom" constant="20" id="F4F-hF-Fok"/>
+                            <constraint firstItem="SOR-vt-0od" firstAttribute="top" secondItem="YqV-jM-bhL" secondAttribute="bottom" constant="20" id="Jsa-JZ-Hst"/>
+                            <constraint firstItem="1VZ-z8-aM9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LOr-Pn-4EL"/>
+                            <constraint firstItem="26K-XG-CcV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MpF-M4-GkM"/>
+                            <constraint firstItem="YqV-jM-bhL" firstAttribute="top" secondItem="1VZ-z8-aM9" secondAttribute="bottom" constant="20" id="SIl-Ec-B8F"/>
+                            <constraint firstItem="2KU-d9-Zuy" firstAttribute="top" secondItem="y3G-XK-lpK" secondAttribute="bottom" constant="20" id="V5b-2A-l1D"/>
+                            <constraint firstItem="YqV-jM-bhL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ali-ED-qSo"/>
+                            <constraint firstItem="2KU-d9-Zuy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nZQ-Lo-YUP"/>
+                            <constraint firstItem="1VZ-z8-aM9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="vtH-cz-mju"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="139"/>
+        </scene>
+    </scenes>
+</document>

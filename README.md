@@ -2,6 +2,9 @@
 
 This is the official MySabay SDK for native iOS application. To use this SDK, you can follow the guides below or download the test with the example project we have in this repository.
 
+## Version
+- v1.0.25 - Latest Release
+
 ## Create your application
 
 Create your MySabay application if you don't have one yet at [MySabay App Dashboard](https://kh.mysabay.com:8443/index.html) and copy your `appId`

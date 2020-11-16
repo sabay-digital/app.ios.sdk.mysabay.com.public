@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		813E8DC1256213CD00DE4B5F /* MySabaySdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813E8DBF256213C900DE4B5F /* MySabaySdk.framework */; };
+		813E8DC2256213CD00DE4B5F /* MySabaySdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 813E8DBF256213C900DE4B5F /* MySabaySdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		81EB6022252320A9003FD10A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB6021252320A9003FD10A /* AppDelegate.swift */; };
 		81EB6024252320A9003FD10A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB6023252320A9003FD10A /* SceneDelegate.swift */; };
 		81EB6026252320A9003FD10A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB6025252320A9003FD10A /* ViewController.swift */; };
 		81EB602B252320AF003FD10A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EB602A252320AF003FD10A /* Assets.xcassets */; };
 		81EB602E252320AF003FD10A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EB602C252320AF003FD10A /* LaunchScreen.storyboard */; };
 		81EB6039252320B0003FD10A /* MySabaySDKSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB6038252320B0003FD10A /* MySabaySDKSampleAppUITests.swift */; };
-		81EB6046252320F7003FD10A /* MySabaySdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EB6044252320F0003FD10A /* MySabaySdk.framework */; };
-		81EB6047252320F7003FD10A /* MySabaySdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81EB6044252320F0003FD10A /* MySabaySdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		81EB604C25232539003FD10A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EB604B25232539003FD10A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +35,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				81EB6047252320F7003FD10A /* MySabaySdk.framework in Embed Frameworks */,
+				813E8DC2256213CD00DE4B5F /* MySabaySdk.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,6 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		813E8DBF256213C900DE4B5F /* MySabaySdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MySabaySdk.framework; sourceTree = "<group>"; };
 		81EB601E252320A9003FD10A /* MySabaySDKSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySabaySDKSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EB6021252320A9003FD10A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81EB6023252320A9003FD10A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		81EB6034252320B0003FD10A /* MySabaySDKSampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySabaySDKSampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EB6038252320B0003FD10A /* MySabaySDKSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySabaySDKSampleAppUITests.swift; sourceTree = "<group>"; };
 		81EB603A252320B0003FD10A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		81EB6044252320F0003FD10A /* MySabaySdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MySabaySdk.framework; sourceTree = "<group>"; };
 		81EB604B25232539003FD10A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81EB6046252320F7003FD10A /* MySabaySdk.framework in Frameworks */,
+				813E8DC1256213CD00DE4B5F /* MySabaySdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +121,7 @@
 		81EB6043252320DA003FD10A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				81EB6044252320F0003FD10A /* MySabaySdk.framework */,
+				813E8DBF256213C900DE4B5F /* MySabaySdk.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -389,6 +389,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = MySabaySDKSampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -411,6 +412,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = MySabaySDKSampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

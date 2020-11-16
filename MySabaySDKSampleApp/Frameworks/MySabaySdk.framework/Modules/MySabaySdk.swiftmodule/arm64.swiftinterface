@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)
-// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name MySabaySdk
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MySabaySdk
 import CoreGraphics
 import CoreTelephony
 import Dispatch
@@ -157,7 +157,7 @@ final public class MSPromise<Value> {
   public init()
   public init(value: Value)
   public init(error: Swift.Error)
-  public convenience init(queue: Dispatch.DispatchQueue = DispatchQueue.global(qos: .userInitiated), work: @escaping (@escaping (Value) -> Swift.Void, @escaping (Swift.Error) -> Swift.Void) throws -> Swift.Void)
+  convenience public init(queue: Dispatch.DispatchQueue = DispatchQueue.global(qos: .userInitiated), work: @escaping (@escaping (Value) -> Swift.Void, @escaping (Swift.Error) -> Swift.Void) throws -> Swift.Void)
   @discardableResult
   final public func then<NewValue>(on queue: MySabaySdk.ExecutionContext = DispatchQueue.main, _ onFulfilled: @escaping (Value) throws -> MySabaySdk.MSPromise<NewValue>) -> MySabaySdk.MSPromise<NewValue>
   @discardableResult
@@ -258,7 +258,7 @@ extension PhoneNumber {
   public init(rawNumber: Swift.String, region: Swift.String) throws
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class MSMySabaySDK : ObjectiveC.NSObject {
-  public static var shared: MySabaySdk.MSMySabaySDK
+  public static let shared: MySabaySdk.MSMySabaySDK
   public static func configure(configure: MySabaySdk.MSConfigure = MSConfigure())
   public func addTransactionObserver()
   public func removeTransactionObserver()
@@ -286,11 +286,11 @@ extension MSMySabaySDK : StoreKit.SKProductsRequestDelegate {
   @objc dynamic public var generatesPhoneNumber: Swift.Bool
   @objc dynamic public var defaultRegion: Swift.String {
     @objc get
-    @objc set(value)
+    @objc set
   }
   @objc dynamic public var withPrefix: Swift.Bool {
     @objc get
-    @objc set(value)
+    @objc set
   }
   @objc dynamic public var currentRegion: Swift.String {
     @objc get
@@ -378,8 +378,8 @@ public enum MSStoreResult {
   }
   public var tokenString: Swift.String!
   public var expirationTime: Swift.Int64!
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers public class MSUserProfile {
   public var uuid: Swift.String!
@@ -417,10 +417,10 @@ public struct MSConfigure {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers final public class PartialFormatter {
-  public convenience init(phoneNumberKit: MySabaySdk.PhoneNumberKit = PhoneNumberKit(), defaultRegion: Swift.String = PhoneNumberKit.defaultRegionCode(), withPrefix: Swift.Bool = true, maxDigits: Swift.Int? = nil)
+  convenience public init(phoneNumberKit: MySabaySdk.PhoneNumberKit = PhoneNumberKit(), defaultRegion: Swift.String = PhoneNumberKit.defaultRegionCode(), withPrefix: Swift.Bool = true, maxDigits: Swift.Int? = nil)
   final public var defaultRegion: Swift.String {
     get
-    set(value)
+    set
   }
   final public var maxDigits: Swift.Int?
   final public var currentRegion: Swift.String {
@@ -436,6 +436,7 @@ public struct MSConfigure {
   public var bonus: Swift.String!
   public var amount: Swift.Double!
   public var assetCode: Swift.String!
+  public var authorization: Swift.String!
   @objc deinit
 }
 public struct MSTheme {
@@ -533,54 +534,54 @@ public enum PossibleLengthType : Swift.String, Swift.Codable {
   final public let phoneNumberKit: MySabaySdk.PhoneNumberKit
   public var flagButton: UIKit.UIButton {
     get
-    set(value)
+    set
   }
   @objc override dynamic open var text: Swift.String? {
     @objc get
-    @objc set(newValue)
+    @objc set
   }
   open func setTextUnformatted(newValue: Swift.String?)
   open var defaultRegion: Swift.String {
     get
     @available(*, deprecated, message: "    The setter of defaultRegion is deprecated,\n    please override defaultRegion in a subclass instead.")
-    set(newValue)
+    set
   }
   public var withPrefix: Swift.Bool {
     get
-    set(value)
+    set
   }
   public var withFlag: Swift.Bool {
     get
-    set(value)
+    set
   }
   public var withExamplePlaceholder: Swift.Bool {
     get
-    set(value)
+    set
   }
   public var countryCodePlaceholderColor: UIKit.UIColor {
     get
-    set(value)
+    set
   }
   public var numberPlaceholderColor: UIKit.UIColor {
     get
-    set(value)
+    set
   }
   @available(iOS 11.0, *)
   public var withDefaultPickerUI: Swift.Bool {
     get
-    set(newValue)
+    set
   }
   public var isPartialFormatterEnabled: Swift.Bool
   public var maxDigits: Swift.Int? {
     get
-    set(value)
+    set
   }
   public var partialFormatter: MySabaySdk.PartialFormatter {
     get
   }
   @objc override dynamic open var delegate: UIKit.UITextFieldDelegate? {
     @objc get
-    @objc set(newValue)
+    @objc set
   }
   public var currentRegion: Swift.String {
     get
@@ -595,7 +596,7 @@ public enum PossibleLengthType : Swift.String, Swift.Codable {
     get
   }
   @objc override dynamic open func layoutSubviews()
-  public convenience init(withPhoneNumberKit phoneNumberKit: MySabaySdk.PhoneNumberKit)
+  convenience public init(withPhoneNumberKit phoneNumberKit: MySabaySdk.PhoneNumberKit)
   public init(frame: CoreGraphics.CGRect, phoneNumberKit: MySabaySdk.PhoneNumberKit)
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init(coder aDecoder: Foundation.NSCoder)
@@ -639,3 +640,29 @@ extension PhoneNumberKit {
     public static var forceModalPresentation: Swift.Bool
   }
 }
+extension MySabaySdk.MetadataTerritory.CodingKeys : Swift.Equatable {}
+extension MySabaySdk.MetadataTerritory.CodingKeys : Swift.Hashable {}
+extension MySabaySdk.MetadataTerritory.CodingKeys : Swift.RawRepresentable {}
+extension MySabaySdk.MetadataPhoneNumberFormat.CodingKeys : Swift.Equatable {}
+extension MySabaySdk.MetadataPhoneNumberFormat.CodingKeys : Swift.Hashable {}
+extension MySabaySdk.MetadataPhoneNumberFormat.CodingKeys : Swift.RawRepresentable {}
+extension MySabaySdk.MsOtpDisplayType : Swift.Equatable {}
+extension MySabaySdk.MsOtpDisplayType : Swift.Hashable {}
+extension MySabaySdk.MsOtpDisplayType : Swift.RawRepresentable {}
+extension MySabaySdk.MSOtpKeyboardType : Swift.Equatable {}
+extension MySabaySdk.MSOtpKeyboardType : Swift.Hashable {}
+extension MySabaySdk.MSOtpKeyboardType : Swift.RawRepresentable {}
+extension MySabaySdk.MSError : Swift.Equatable {}
+extension MySabaySdk.MSError : Swift.Hashable {}
+extension MySabaySdk.MSAppTheme : Swift.Equatable {}
+extension MySabaySdk.MSAppTheme : Swift.Hashable {}
+extension MySabaySdk.PhoneNumberError : Swift.Equatable {}
+extension MySabaySdk.PhoneNumberError : Swift.Hashable {}
+extension MySabaySdk.PhoneNumberFormat : Swift.Equatable {}
+extension MySabaySdk.PhoneNumberFormat : Swift.Hashable {}
+extension MySabaySdk.PhoneNumberType : Swift.Equatable {}
+extension MySabaySdk.PhoneNumberType : Swift.Hashable {}
+extension MySabaySdk.PhoneNumberType : Swift.RawRepresentable {}
+extension MySabaySdk.PossibleLengthType : Swift.Equatable {}
+extension MySabaySdk.PossibleLengthType : Swift.Hashable {}
+extension MySabaySdk.PossibleLengthType : Swift.RawRepresentable {}

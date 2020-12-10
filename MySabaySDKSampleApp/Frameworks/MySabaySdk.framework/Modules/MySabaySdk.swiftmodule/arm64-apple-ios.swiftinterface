@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)
+// swift-compiler-version: Apple Swift version 5.1.3 (swift-5.1.3-RELEASE)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MySabaySdk
 import CoreGraphics
 import CoreTelephony
@@ -77,7 +77,7 @@ extension MetadataPhoneNumberFormat {
   }
   public init(from decoder: Swift.Decoder) throws
 }
-@_hasMissingDesignatedInitializers public class MSBalance {
+public class MSBalance {
   public var coin: Swift.Double!
   public var gold: Swift.Double!
   @objc deinit
@@ -109,7 +109,7 @@ public enum MSOtpKeyboardType : Swift.Int {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers public class MSOtpFieldView : UIKit.UIView {
+@objc public class MSOtpFieldView : UIKit.UIView {
   weak public var delegate: MySabaySdk.MSOtpFieldViewDelegate?
   public var displayType: MySabaySdk.MsOtpDisplayType
   public var fieldsCount: Swift.Int
@@ -133,9 +133,9 @@ public enum MSOtpKeyboardType : Swift.Int {
   @objc override dynamic public func awakeFromNib()
   public func initializeUI()
   public func initializeOTPFields()
-  @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 extension MSOtpFieldView : UIKit.UITextFieldDelegate {
   @objc dynamic public func textFieldShouldBeginEditing(_ textField: UIKit.UITextField) -> Swift.Bool
@@ -257,7 +257,7 @@ extension PhoneNumber {
   @available(*, unavailable, message: "use PhoneNumberKit instead to produce PhoneNumbers")
   public init(rawNumber: Swift.String, region: Swift.String) throws
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class MSMySabaySDK : ObjectiveC.NSObject {
+@objc open class MSMySabaySDK : ObjectiveC.NSObject {
   public static let shared: MySabaySdk.MSMySabaySDK
   public static func configure(configure: MySabaySdk.MSConfigure = MSConfigure())
   public func addTransactionObserver()
@@ -297,8 +297,8 @@ extension MSMySabaySDK : StoreKit.SKProductsRequestDelegate {
   }
   public init(phoneNumberKit pnk: MySabaySdk.PhoneNumberKit = PhoneNumberKit(), defaultRegion: Swift.String = PhoneNumberKit.defaultRegionCode(), withPrefix: Swift.Bool = true)
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension PhoneNumberFormatter {
   @objc override dynamic open func string(for obj: Any?) -> Swift.String?
@@ -353,7 +353,7 @@ public enum MSLoginResult {
   case loginSuccess(MySabaySdk.MSRefreshToken, MySabaySdk.MSAccessToken)
   case loginFailed(Swift.Error)
 }
-@objc @_hasMissingDesignatedInitializers public class MSRefreshToken : ObjectiveC.NSObject {
+@objc public class MSRefreshToken : ObjectiveC.NSObject {
   public static var isValid: Swift.Bool {
     get
   }
@@ -369,7 +369,7 @@ public enum MSStoreResult {
   case purchaseMySabay(MySabaySdk.MSPurchase)
   case purchaseFailed(Swift.Error)
 }
-@objc @_hasMissingDesignatedInitializers public class MSAccessToken : ObjectiveC.NSObject {
+@objc public class MSAccessToken : ObjectiveC.NSObject {
   public static var isValid: Swift.Bool {
     get
   }
@@ -381,7 +381,7 @@ public enum MSStoreResult {
   @objc override dynamic public init()
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class MSUserProfile {
+public class MSUserProfile {
   public var uuid: Swift.String!
   public var serviceId: Swift.Int64!
   public var mySabayUserId: Swift.Int64!
@@ -407,7 +407,7 @@ public struct MSConfigure {
   }
   public init()
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class MSOtpField : UIKit.UITextField {
+@objc public class MSOtpField : UIKit.UITextField {
   public var otpBorderColor: UIKit.UIColor
   public var otpBorderWidth: CoreGraphics.CGFloat
   public var shapeLayer: QuartzCore.CAShapeLayer!
@@ -416,7 +416,7 @@ public struct MSConfigure {
   @objc override dynamic public func deleteBackward()
   @objc deinit
 }
-@_hasMissingDesignatedInitializers final public class PartialFormatter {
+final public class PartialFormatter {
   convenience public init(phoneNumberKit: MySabaySdk.PhoneNumberKit = PhoneNumberKit(), defaultRegion: Swift.String = PhoneNumberKit.defaultRegionCode(), withPrefix: Swift.Bool = true, maxDigits: Swift.Int? = nil)
   final public var defaultRegion: Swift.String {
     get
@@ -430,7 +430,7 @@ public struct MSConfigure {
   final public func formatPartial(_ rawNumber: Swift.String) -> Swift.String
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class MSPurchase {
+public class MSPurchase {
   public var hash: Swift.String!
   public var packageId: Swift.String!
   public var bonus: Swift.String!
@@ -451,7 +451,7 @@ public struct MSAppearence {
   public var secondaryColor: UIKit.UIColor!
   public init()
 }
-@objc @_hasMissingDesignatedInitializers @available(iOS 11.0, *)
+@objc @available(iOS 11.0, *)
 public class CountryCodePickerViewController : UIKit.UITableViewController {
   final public let phoneNumberKit: MySabaySdk.PhoneNumberKit
   public init(phoneNumberKit: MySabaySdk.PhoneNumberKit, commonCountryCodes: [Swift.String] = PhoneNumberKit.CountryCodePicker.commonCountryCodes)
@@ -463,9 +463,9 @@ public class CountryCodePickerViewController : UIKit.UITableViewController {
   @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, titleForHeaderInSection section: Swift.Int) -> Swift.String?
   @objc override dynamic public func sectionIndexTitles(for tableView: UIKit.UITableView) -> [Swift.String]?
   @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
-  @objc deinit
   @objc override dynamic public init(style: UIKit.UITableView.Style)
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc deinit
 }
 @available(iOS 11.0, *)
 extension CountryCodePickerViewController : UIKit.UISearchResultsUpdating {
@@ -530,7 +530,7 @@ public enum PossibleLengthType : Swift.String, Swift.Codable {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers open class PhoneNumberTextField : UIKit.UITextField, UIKit.UITextFieldDelegate {
+@objc open class PhoneNumberTextField : UIKit.UITextField, UIKit.UITextFieldDelegate {
   final public let phoneNumberKit: MySabaySdk.PhoneNumberKit
   public var flagButton: UIKit.UIButton {
     get
@@ -658,9 +658,7 @@ extension MySabaySdk.MSAppTheme : Swift.Equatable {}
 extension MySabaySdk.MSAppTheme : Swift.Hashable {}
 extension MySabaySdk.PhoneNumberError : Swift.Equatable {}
 extension MySabaySdk.PhoneNumberError : Swift.Hashable {}
-extension MySabaySdk.PhoneNumberFormat : Swift.Equatable {}
 extension MySabaySdk.PhoneNumberFormat : Swift.Hashable {}
-extension MySabaySdk.PhoneNumberType : Swift.Equatable {}
 extension MySabaySdk.PhoneNumberType : Swift.Hashable {}
 extension MySabaySdk.PhoneNumberType : Swift.RawRepresentable {}
 extension MySabaySdk.PossibleLengthType : Swift.Equatable {}

@@ -1,0 +1,4 @@
+module FBSDKGamingServicesKit {
+    umbrella header "/Users/lay.channara/Documents/Projects/app.ios.sdk.mysabay.com.public/.build/checkouts/facebook-ios-sdk/FBSDKGamingServicesKit/FBSDKGamingServicesKit/include/FBSDKGamingServicesKit.h"
+    export *
+}

@@ -21,8 +21,34 @@ let package = Package(
 		.package(url: "https://github.com/onevcat/Kingfisher.git", from: "6.1.1"),
 	],
 	targets: [
-		.binaryTarget(name: "MySabaySdk", path: "./Sources/MySabaySdk.xcframework")
+		.target(name: "MySabaySdk", dependencies: [
+					"JSONValue",
+					"Kingfisher",
+					"PhoneNumberKit",
+					"ReSwift",
+					"SwiftyStoreKit",
+					"TinyHashes",
+					"apollo-ios",
+					"facebook-ios-sdk",
+					"keychain-swift",
+					"matomo-sdk-ios"], path: "./Sources/MySabaySdk.xcframework")
 	]
 )
+
+warning: adding embedded git repository: .build/checkouts/JSONValue
+warning: adding embedded git repository: .build/checkouts/Kingfisher
+warning: adding embedded git repository: .build/checkouts/PathKit
+warning: adding embedded git repository: .build/checkouts/PhoneNumberKit
+warning: adding embedded git repository: .build/checkouts/ReSwift
+warning: adding embedded git repository: .build/checkouts/SQLite.swift
+warning: adding embedded git repository: .build/checkouts/Spectre
+warning: adding embedded git repository: .build/checkouts/Starscream
+warning: adding embedded git repository: .build/checkouts/Stencil
+warning: adding embedded git repository: .build/checkouts/SwiftyStoreKit
+warning: adding embedded git repository: .build/checkouts/TinyHashes
+warning: adding embedded git repository: .build/checkouts/apollo-ios
+warning: adding embedded git repository: .build/checkouts/facebook-ios-sdk
+warning: adding embedded git repository: .build/checkouts/keychain-swift
+warning: adding embedded git repository: .build/checkouts/matomo-sdk-ios
 
 

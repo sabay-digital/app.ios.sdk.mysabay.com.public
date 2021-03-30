@@ -8,15 +8,15 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "MySabaySdk"
-  spec.version      = "1.0.30"
+  spec.version      = "1.0.31"
   spec.summary      = "Official MySabay iOS SDK in Swift."
   spec.description  = "Official MySabay iOS SDK in Swift for MySabay platform."
   spec.homepage     = "https://git.sabay.com/mysabay/sdk/app.ios.sdk.mysabay.com.public"
   spec.license      = { :type => "MIT", :file => "MySabaySdk/LICENSE" }
   spec.author             = { "Sabay Digital" => "partner.cocoapods@sabay.com" }
-  spec.ios.deployment_target = '13.0'
+  spec.ios.deployment_target = '12.0'
   spec.ios.vendored_frameworks = 'MySabaySdk/MySabaySdk.framework'
-  spec.source       = { :http => "https://git.sabay.com/mysabay/sdk/app.ios.sdk.mysabay.com.public/raw/1.0.30/MySabaySdk.zip" }
+  spec.source       = { :http => "https://git.sabay.com/mysabay/sdk/app.ios.sdk.mysabay.com.public/raw/1.0.31/MySabaySdk.zip" }
   spec.swift_version = '5.3.2'
   spec.exclude_files = "Classes/Exclude"
   spec.pod_target_xcconfig = {'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}

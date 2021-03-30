@@ -1,0 +1,31 @@
+mutation CreateInvoice($input: invoice_CreateInvoiceInput) {
+    invoice_createInvoice(input: $input) {
+        invoice {
+            id
+            userId
+            items
+            amount
+            notes
+            serviceCode
+            ssnTxHash
+            paymentProvider
+            status
+            currency
+        }
+    }
+}
+
+query GetInvoice($invoiceId: ID!){
+    invoice_getInvoiceById(id: $invoiceId) {
+        id
+        userId
+        items
+        amount
+        notes
+        serviceCode
+        ssnTxHash
+        paymentProvider
+        status
+        currency
+    }
+}

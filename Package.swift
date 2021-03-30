@@ -4,20 +4,18 @@
 import PackageDescription
 
 let package = Package(
-    name: "MySabaySdk",
-    products: [
-        .library(
-            name: "MySabaySdk",
-            targets: ["MySabaySdk"]),
-    ],
-    dependencies: [
-        // .package(url: /* package url */, from: "1.0.0"),
-    ],
-    targets: [
+	name: "MySabaySdk",
+	products: [
+		.library(
+			name: "MySabaySdk",
+			targets: ["MySabaySdk"]),
+	],
+	dependencies: [
+		// .package(url: /* package url */, from: "1.0.0"),
+	],
+	targets: [
 		.binaryTarget(
 			name: "MySabaySdk",
-			url: "https://git.sabay.com/mysabay/sdk/app.ios.sdk.mysabay.com.public/raw/2.0.0/MySabaySdk.zip",
-			checksum: "179e3c4129c1350b66892f6e914563922afb862a45869c843c8290df6faaf565"
-		),
-    ]
+			path: "./Sources/MySabaySdk.xcframework")
+	]
 )

@@ -333,7 +333,7 @@ public struct MSInvoiceItem {
 }
 public struct MSTrackingOrder {
   public var id: Swift.String!
-  public var items: [OrderItem]!
+  public var items: [MatomoTracker.OrderItem]!
   public var revenue: Swift.Float!
   public var subTotal: Swift.Float?
   public var tax: Swift.Float?

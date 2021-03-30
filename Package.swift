@@ -35,20 +35,4 @@ let package = Package(
 	]
 )
 
-warning: adding embedded git repository: .build/checkouts/JSONValue
-warning: adding embedded git repository: .build/checkouts/Kingfisher
-warning: adding embedded git repository: .build/checkouts/PathKit
-warning: adding embedded git repository: .build/checkouts/PhoneNumberKit
-warning: adding embedded git repository: .build/checkouts/ReSwift
-warning: adding embedded git repository: .build/checkouts/SQLite.swift
-warning: adding embedded git repository: .build/checkouts/Spectre
-warning: adding embedded git repository: .build/checkouts/Starscream
-warning: adding embedded git repository: .build/checkouts/Stencil
-warning: adding embedded git repository: .build/checkouts/SwiftyStoreKit
-warning: adding embedded git repository: .build/checkouts/TinyHashes
-warning: adding embedded git repository: .build/checkouts/apollo-ios
-warning: adding embedded git repository: .build/checkouts/facebook-ios-sdk
-warning: adding embedded git repository: .build/checkouts/keychain-swift
-warning: adding embedded git repository: .build/checkouts/matomo-sdk-ios
-
 

@@ -16,8 +16,8 @@ let package = Package(
     targets: [
 		.binaryTarget(
 			name: "MySabaySdk",
-			url: "https://git.sabay.com/mysabay/sdk/app.ios.sdk.mysabay.com.public/raw/1.0.31/MySabaySdk.zip",
-			checksum: "1616297bcf20f507dde9e2f9c02037c62346fe573e03f7b8ab026c5058b35acc"
+			url: "https://git.sabay.com/mysabay/sdk/app.ios.sdk.mysabay.com.public/raw/2.0.0/MySabaySdk.zip",
+			checksum: "82243f079d834e169c3afd88c3a15287130f1e582dbc321fde1c195d40c4f999"
 		),
     ]
 )

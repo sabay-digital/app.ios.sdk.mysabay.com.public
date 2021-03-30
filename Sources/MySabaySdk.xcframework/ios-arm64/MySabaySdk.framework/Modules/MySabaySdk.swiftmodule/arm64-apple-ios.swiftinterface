@@ -2,7 +2,6 @@
 // swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MySabaySdk
 import Apollo
-import CommonCrypto
 import Dispatch
 import FBSDKLoginKit
 import Foundation
@@ -15,6 +14,7 @@ import ReSwift
 import StoreKit
 import Swift
 import SwiftyStoreKit
+import TinyHashes
 import UIKit
 import WebKit
 public enum MSAppState : ReSwift.StateType {
@@ -351,6 +351,116 @@ public struct MSTrackingOrder {
   public var tokenString: Swift.String!
   @objc deinit
   @objc override dynamic public init()
+}
+public typealias store_JSONObject = [Swift.String : Any?]
+public typealias checkout_JSONObject = [Swift.String : Any?]
+public typealias invoice_JSONObject = [Swift.String : Any?]
+public struct MSPersona {
+  public var uuid: Swift.String!
+}
+public struct MSStoreProductProperties {
+  public var priceInSabayCoin: Swift.Int!
+  public var priceInSabayGold: Swift.Int!
+  public var displayName: Swift.String!
+  public var packageCode: Swift.String!
+}
+public struct MSStoreProduct {
+  public var id: Swift.String!
+  public var name: Swift.String!
+  public var salePrice: Swift.Double!
+  public var currencyCode: Swift.String!
+  public var isActive: Swift.Bool!
+  public var properties: MySabaySdk.MSStoreProductProperties!
+}
+extension MSStoreProduct {
+  public func itemData(packageId: Swift.String) -> MySabaySdk.store_JSONObject
+}
+public struct MSInvoice {
+  public var id: Swift.String!
+  public var userId: Swift.String!
+  public var items: [MySabaySdk.MSInvoiceItem]
+  public var amount: Swift.Double!
+  public var notes: Swift.String!
+  public var serviceCode: Swift.String!
+  public var ssnTxHash: Swift.String?
+  public var paymentProvider: Swift.String!
+  public var status: Swift.String!
+  public var currency: Swift.String!
+}
+public struct MSUserProfile {
+  public var userId: Swift.Int!
+  public var localPayEnabled: Swift.Bool!
+  public var balances: [MySabaySdk.MSBalance]
+  public var status: Swift.Int!
+  public var persona: MySabaySdk.MSPersona!
+}
+@_hasMissingDesignatedInitializers public class Network {
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class MSAccessToken : ObjectiveC.NSObject {
+  public static var isValid: Swift.Bool {
+    get
+  }
+  public static var currentToken: MySabaySdk.MSAccessToken? {
+    get
+  }
+  public var tokenString: Swift.String!
+  public var expirationTime: Swift.Int!
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum MSEnvironment {
+  case sandbox
+  case production
+  public static func == (a: MySabaySdk.MSEnvironment, b: MySabaySdk.MSEnvironment) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public struct MSConfigure {
+  public var theme: MySabaySdk.MSTheme!
+  public var environment: MySabaySdk.MSEnvironment!
+  public var serviceCode: Swift.String!
+  public var appearance: MySabaySdk.MSAppearance!
+  public init()
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class MSOtpField : UIKit.UITextField {
+  public var otpBorderColor: UIKit.UIColor
+  public var otpBorderWidth: CoreGraphics.CGFloat
+  public var shapeLayer: QuartzCore.CAShapeLayer!
+  @objc override dynamic public func awakeFromNib()
+  public func initalizeUI(forFieldType type: MySabaySdk.MsOtpDisplayType)
+  @objc override dynamic public func deleteBackward()
+  @objc deinit
+}
+public struct MSPsProviderInfo {
+  public var logo: Swift.String!
+}
+public struct MSPsProvider {
+  public var id: Swift.String!
+  public var name: Swift.String!
+  public var code: Swift.String!
+  public var packageId: Swift.String!
+  public var label: Swift.String!
+  public var value: Swift.Int!
+  public var additionalBody: MySabaySdk.checkout_JSONObject?
+  public var additionalHeader: MySabaySdk.checkout_JSONObject?
+  public var type: MySabaySdk.MSPurchaseType!
+  public var status: Swift.Int!
+  public var info: MySabaySdk.MSPsProviderInfo!
+  public var issueCurrencies: [Swift.String]
+  public var requestUrl: Swift.String!
+  public var isSelected: Swift.Bool {
+    get
+    set
+  }
+}
+public struct MSServiceInfo {
+  public var name: Swift.String!
+  public var code: Swift.String!
+  public var matomoTrackingID: Swift.String!
+  public var usdkhr: Swift.Int!
 }
 public struct invoice_CreateInvoiceInput : Apollo.GraphQLMapConvertible {
   public var graphQLMap: Apollo.GraphQLMap
@@ -1802,116 +1912,6 @@ final public class GetProductsByServiceCodeQuery : Apollo.GraphQLQuery {
     }
   }
   @objc deinit
-}
-public typealias store_JSONObject = [Swift.String : Any?]
-public typealias checkout_JSONObject = [Swift.String : Any?]
-public typealias invoice_JSONObject = [Swift.String : Any?]
-public struct MSPersona {
-  public var uuid: Swift.String!
-}
-public struct MSStoreProductProperties {
-  public var priceInSabayCoin: Swift.Int!
-  public var priceInSabayGold: Swift.Int!
-  public var displayName: Swift.String!
-  public var packageCode: Swift.String!
-}
-public struct MSStoreProduct {
-  public var id: Swift.String!
-  public var name: Swift.String!
-  public var salePrice: Swift.Double!
-  public var currencyCode: Swift.String!
-  public var isActive: Swift.Bool!
-  public var properties: MySabaySdk.MSStoreProductProperties!
-}
-extension MSStoreProduct {
-  public func itemData(packageId: Swift.String) -> MySabaySdk.store_JSONObject
-}
-public struct MSInvoice {
-  public var id: Swift.String!
-  public var userId: Swift.String!
-  public var items: [MySabaySdk.MSInvoiceItem]
-  public var amount: Swift.Double!
-  public var notes: Swift.String!
-  public var serviceCode: Swift.String!
-  public var ssnTxHash: Swift.String?
-  public var paymentProvider: Swift.String!
-  public var status: Swift.String!
-  public var currency: Swift.String!
-}
-public struct MSUserProfile {
-  public var userId: Swift.Int!
-  public var localPayEnabled: Swift.Bool!
-  public var balances: [MySabaySdk.MSBalance]
-  public var status: Swift.Int!
-  public var persona: MySabaySdk.MSPersona!
-}
-@_hasMissingDesignatedInitializers public class Network {
-  @objc deinit
-}
-@objc @_hasMissingDesignatedInitializers public class MSAccessToken : ObjectiveC.NSObject {
-  public static var isValid: Swift.Bool {
-    get
-  }
-  public static var currentToken: MySabaySdk.MSAccessToken? {
-    get
-  }
-  public var tokenString: Swift.String!
-  public var expirationTime: Swift.Int!
-  @objc override dynamic public init()
-  @objc deinit
-}
-public enum MSEnvironment {
-  case sandbox
-  case production
-  public static func == (a: MySabaySdk.MSEnvironment, b: MySabaySdk.MSEnvironment) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-  public func hash(into hasher: inout Swift.Hasher)
-}
-public struct MSConfigure {
-  public var theme: MySabaySdk.MSTheme!
-  public var environment: MySabaySdk.MSEnvironment!
-  public var serviceCode: Swift.String!
-  public var appearance: MySabaySdk.MSAppearance!
-  public init()
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class MSOtpField : UIKit.UITextField {
-  public var otpBorderColor: UIKit.UIColor
-  public var otpBorderWidth: CoreGraphics.CGFloat
-  public var shapeLayer: QuartzCore.CAShapeLayer!
-  @objc override dynamic public func awakeFromNib()
-  public func initalizeUI(forFieldType type: MySabaySdk.MsOtpDisplayType)
-  @objc override dynamic public func deleteBackward()
-  @objc deinit
-}
-public struct MSPsProviderInfo {
-  public var logo: Swift.String!
-}
-public struct MSPsProvider {
-  public var id: Swift.String!
-  public var name: Swift.String!
-  public var code: Swift.String!
-  public var packageId: Swift.String!
-  public var label: Swift.String!
-  public var value: Swift.Int!
-  public var additionalBody: MySabaySdk.checkout_JSONObject?
-  public var additionalHeader: MySabaySdk.checkout_JSONObject?
-  public var type: MySabaySdk.MSPurchaseType!
-  public var status: Swift.Int!
-  public var info: MySabaySdk.MSPsProviderInfo!
-  public var issueCurrencies: [Swift.String]
-  public var requestUrl: Swift.String!
-  public var isSelected: Swift.Bool {
-    get
-    set
-  }
-}
-public struct MSServiceInfo {
-  public var name: Swift.String!
-  public var code: Swift.String!
-  public var matomoTrackingID: Swift.String!
-  public var usdkhr: Swift.Int!
 }
 public struct MSAppearance {
   public var title: Swift.String!

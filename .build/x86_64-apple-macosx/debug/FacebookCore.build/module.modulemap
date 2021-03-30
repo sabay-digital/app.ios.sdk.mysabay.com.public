@@ -1,4 +1,0 @@
-module FacebookCore {
-    header "/Users/lay.channara/Documents/Projects/app.ios.sdk.mysabay.com.public/.build/x86_64-apple-macosx/debug/FacebookCore.build/FacebookCore-Swift.h"
-    requires objc
-}

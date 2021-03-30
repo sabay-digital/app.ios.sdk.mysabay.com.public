@@ -1,4 +1,0 @@
-module ApolloCodegenLib {
-    header "/Users/lay.channara/Documents/Projects/app.ios.sdk.mysabay.com.public/.build/x86_64-apple-macosx/debug/ApolloCodegenLib.build/ApolloCodegenLib-Swift.h"
-    requires objc
-}

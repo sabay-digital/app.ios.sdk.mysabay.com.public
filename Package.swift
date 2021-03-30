@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
 	name: "MySabaySdk",
 	products: [
-		.library(name: "MySabaySdk", targets: ["MySabaySdk"]),
+		.library(name: "MySabaySdk", targets: ["MySabaySdk", "Dependencies"]),
 	],
 	dependencies: [
 		.package(url: "https://github.com/evgenyneu/keychain-swift.git", from: "19.0.0"),
@@ -20,7 +20,8 @@ let package = Package(
 		.package(url: "https://github.com/onevcat/Kingfisher.git", from: "6.1.1"),
 	],
 	targets: [
-		.target(name: "MySabaySdk", dependencies: [
+		.binaryTarget(name: "MySabaySdk", path: "./Sources/MySabaySdk.xcframework"),
+		.target(name: "Dependencies", dependencies: [
 					"JSONValue",
 					"Kingfisher",
 					"PhoneNumberKit",
@@ -29,8 +30,6 @@ let package = Package(
 					"apollo-ios",
 					"facebook-ios-sdk",
 					"keychain-swift",
-					"matomo-sdk-ios"], path: "./Sources/MySabaySdk.xcframework")
+					"matomo-sdk-ios"])
 	]
 )
-
-

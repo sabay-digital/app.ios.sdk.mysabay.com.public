@@ -37,6 +37,14 @@ Each store product has it own supported providers. To get providers for specific
 func getPaymentServiceProvidersByProduct(productId: String) -> MSPromise<[MSPsProviderGroup]>
 ```
 
+## Payment Detail
+
+Every purchase with MySabay SDK has to be recorded in our network. Call function below before doing any purchase
+
+```swift
+createPaymentDetail(pspId: String, items: [invoice_JSONObject], amount: Double, currency: MSCurrency) -> MSPromise<(MSPaymentDetail, String)>
+```
+
 ## In App Purchase
 
 To purchase with iOS in-app purchase, call below function. 
@@ -73,25 +81,7 @@ func createPreAuthPayment(paymentDetail: MSPaymentDetail, invoiceId: String) -> 
 
 ## One Time Purchase
 
-To make purchase with one-time provider, call this function
-
-```swift
-func createOneTimePayment(paymentDetail: MSPaymentDetail, invoiceId: String) -> MSPromise<String>
-```
-
-## Payment Record
-
-Every purchase with MySabay SDK has to be recorded in our network. Before make any purchase, you have to create an invoice in our system.
-
-```swift
-func createInvoice(items: [invoice_JSONObject], amount: Double, currency: MSCurrency) -> MSPromise<MSInvoice>
-```
-
-When invoice is created you have to created payment detail with provider you want to pay with
-
-```swift
-func createPaymentDetail(pspId: String, invoiceId: String) -> MSPromise<(MSPaymentDetail, String)>
-```
+To make purchase with one-time provider, you have to create [Payment Detail](#payment-detail). For detail instruction to process one-time payment, you can read [One-Time Instruction](). 
 
 ## Payment Status
 
@@ -115,23 +105,21 @@ To implement purchase with MySabay SDK, it will take some steps based on payment
 
 ### In-app purchase
 
-    1. Create invoice
-    2. Create payment detail
-    3. Purchase with StoreKit
-    4. Fetch receipt data
-    5. Verfify purcahse
-    6. Check payment status
+    1. Create payment detail
+    2. Purchase with StoreKit
+    3. Fetch receipt data
+    4. Verfify purcahse
+    5. Check payment status
 
 ### Pre-authorization purchase
 
-    1. Create invoice
-    2. Create payment detail
-    3. Create pre-auth payment
-    4. Check payment status
+    1. Create payment detail
+    2. Create pre-auth payment
+    3. Check payment status
 
 ### One-time purchase
 
-    1. Create invoice
-    2. Create payment detail
-    3. Create one-time payment
+    1. Create payment detail
+    2. Compose html template with payment detail
+    3. Process payment on web
     4. Check payment status

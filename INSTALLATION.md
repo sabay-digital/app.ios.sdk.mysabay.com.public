@@ -13,7 +13,7 @@ MySabay SDK distinguishes the service based on service code. You can create your
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. To integrate MySabay SDK into your Xcode project using CocoaPods, specify it in your `Podfile`
 
 ```ruby
-pod 'MySabaySdk', '~> 1.0.25'
+pod 'MySabaySdk', '~> 2.0.1'
 ```
 
 ## Configuration

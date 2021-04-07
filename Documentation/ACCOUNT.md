@@ -2,6 +2,26 @@
 
 MySabay SDK provides UI support and functionalities for your app to access account authentication.
 
+**Table of Contents**
+- [UI Support](#ui-support)
+    - [Login Process](#login-process)
+- [Functionalities](#functionalities)
+    - [Login Guest](#login-guest)
+    - [Login Phone](#login-phone)
+    - [Login Facebook](#login-facebook)
+    - [Login MySabay](#login-mysabay)
+    - [Register MySabay](#register-mysabay)
+    - [Check MySabay](#check-mysabay)
+    - [Verify MySabay](#verify-mysabay)
+    - [Request Creating MySabay With Phone](#request-creating-mysabay-with-phone)
+    - [Create MySabay Account with Phone](#create-mysabay-account-with-phone)
+    - [Check Local Payment](#check-local-payment)
+    - [Get Profile](#get-profile)
+    - [Refresh Tokens](#refresh-tokens)
+    - [Verify Tokens](#verify-tokens)
+    - [Logout](#logout)
+    - [Tokens Management](#tokens-management)
+
 ## UI Support
 
 MySabay SDK built-in with ui support for authentication for account. This will make you easy without making your own ui form to handle all functionalities for authentication process. Here we will handle for login with phone and one-time password, MySabay account and Facebook, registering MySabay account, verifying and creating MySabay account related to a phone number.

@@ -2,13 +2,18 @@
 
 This is the quick guide to install MySabay iOS SDK in your app.
 
+**Table of Contents**
+- [Service Code](#service-code)
+- [Installation](#installation)
+- [Configuration](#configuration)
+    - [Info.plist](#infoplist)
+    - [AppDelegate](#appdelegate)
+
 ## Service Code
 
-MySabay SDK distinguishes the service based on service code. You can create your service at ....
+MySabay SDK distinguishes the service based on service code. Please contact us for the service code.
 
 ## Installation
-
-### CocoaPods
 
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. To integrate MySabay SDK into your Xcode project using CocoaPods, specify it in your `Podfile`
 

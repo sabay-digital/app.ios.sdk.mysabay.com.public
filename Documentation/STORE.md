@@ -2,6 +2,21 @@
 
 MySabay SDK provides UI support and functionalities for your app to access store process.
 
+**Table of Contents**
+- [UI Support](#ui-support)
+    - [Store Process](#store-process)
+- [Funtionalities](#funtionalities)
+    - [Store Products](#store-products)
+    - [Payment Detail](#payment-detail)
+    - [In-App Purchase](#in-app-purchase)
+    - [Pre Authorization Purchase](#pre-authorization-purchase)
+    - [One Time Purchase](#one-time-purchase)
+    - [Payment Status](#payment-status)
+    - [How Can I Implement Purchase With MySabay SDK?](#how-can-i-implement-purchase-with-mySabay-sdk?)
+        - [In-app purchase](#in-app-purchase-1)
+        - [Pre-authorization purchase](#pre-authorization-purchase)
+        - [One-time purchase](#One-time-purchase)
+
 ## UI Support
 
 MySabay SDK built-in with ui support for access store. This will make you easy without making your own ui show store products or handle payment process.
@@ -45,7 +60,7 @@ Every purchase with MySabay SDK has to be recorded in our network. Call function
 createPaymentDetail(pspId: String, items: [invoice_JSONObject], amount: Double, currency: MSCurrency) -> MSPromise<(MSPaymentDetail, String)>
 ```
 
-## In App Purchase
+## In-App Purchase
 
 To purchase with iOS in-app purchase, call below function. 
 

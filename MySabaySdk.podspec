@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "MySabaySdk"
-  spec.version      = "2.0.4"
+  spec.version      = "2.0.7"
   spec.summary      = "Official MySabay iOS SDK in Swift."
   spec.description  = "Official MySabay iOS SDK in Swift for MySabay platform."
   spec.homepage     = "https://git.sabay.com/mysabay/sdk/app.ios.sdk.mysabay.com.public"
@@ -35,7 +35,7 @@ Pod::Spec.new do |spec|
   spec.author             = { "Sabay Digital" => "partner.cocoapods@sabay.com" }
   spec.ios.deployment_target = '13.0'
   spec.ios.vendored_frameworks = 'MySabaySdk.xcframework'
-  spec.source       = { :http => "https://git.sabay.com/mysabay/sdk/app.ios.sdk.mysabay.com.public/raw/2.0.4/MySabaySdk.xcframework.zip" }
+  spec.source       = { :http => "https://git.sabay.com/mysabay/sdk/app.ios.sdk.mysabay.com.public/raw/2.0.7/MySabaySdk.xcframework.zip" }
   spec.swift_version = '5.3.2'
   spec.dependency 'MatomoTracker', '~> 7.4'
   spec.dependency 'Kingfisher', '~> 6.0'
